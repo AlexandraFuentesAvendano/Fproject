@@ -27,8 +27,8 @@ interface Material {
 const availableMaterials: Material[] = [
     {
         id: 'glass-clear',
-        name: 'Vidrio Claro',
-        thumbnail: '/materials/glass-clear.jpg',
+        name: 'Glass clear',
+        thumbnail: '/glass-clear.jpg',
         properties: {
             thermalResistance: 0.05,
             cost: 100,
@@ -37,8 +37,8 @@ const availableMaterials: Material[] = [
     },
     {
         id: 'glass-tinted',
-        name: 'Vidrio Tintado',
-        thumbnail: '/materials/glass-tinted.jpg',
+        name: 'Glass tinted',
+        thumbnail: '/glass-tinted.jpg',
         properties: {
             thermalResistance: 0.08,
             cost: 150,
@@ -47,8 +47,8 @@ const availableMaterials: Material[] = [
     },
     {
         id: 'glass-low-e',
-        name: 'Vidrio Bajo Emisivo',
-        thumbnail: '/materials/glass-low-e.jpg',
+        name: 'Glass low-e',
+        thumbnail: '/glass-low-e.jpg',
         properties: {
             thermalResistance: 0.12,
             cost: 200,
@@ -57,8 +57,8 @@ const availableMaterials: Material[] = [
     },
     {
         id: 'glass-reflective',
-        name: 'Vidrio Reflectivo',
-        thumbnail: '/materials/glass-reflective.jpg',
+        name: 'Glass reflective',
+        thumbnail: '/glass-reflective.jpg',
         properties: {
             thermalResistance: 0.15,
             cost: 250,
@@ -201,7 +201,7 @@ function Settings() {
                                         { value: 0, label: 'N' },
                                         { value: 90, label: 'E' },
                                         { value: 180, label: 'S' },
-                                        { value: 270, label: 'O' },
+                                        { value: 270, label: 'W' },
                                     ]}
                                 />
                             </Box>

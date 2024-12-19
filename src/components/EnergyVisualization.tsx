@@ -119,7 +119,7 @@ function EnergyVisualization({ data }: EnergyVisualizationProps) {
                 0: 'N',
                 90: 'E',
                 180: 'S',
-                '-90': 'O',
+                '-90': 'W',
             };
 
             // Crear sprite para la etiqueta

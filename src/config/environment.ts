@@ -31,25 +31,25 @@ export const LIGHT_CONFIG = {
     TIME_STEPS: 24,
     MATERIALS: {
         'glass-clear': {
-            name: 'Vidrio Claro',
+            name: 'Glass Clear ',
             transmittance: 0.9,
             cost: 100,
             sustainability: 0.7,
         },
         'glass-tinted': {
-            name: 'Vidrio Tintado',
+            name: 'Glass Tinted',
             transmittance: 0.6,
             cost: 150,
             sustainability: 0.8,
         },
         'glass-low-e': {
-            name: 'Vidrio Bajo Emisivo',
+            name: 'Glass Low E'
             transmittance: 0.7,
             cost: 200,
             sustainability: 0.9,
         },
         'glass-reflective': {
-            name: 'Vidrio Reflectivo',
+            name: ' Glass Reflective',
             transmittance: 0.4,
             cost: 250,
             sustainability: 0.85,

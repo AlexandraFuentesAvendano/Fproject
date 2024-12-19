@@ -1,5 +1,4 @@
 import AssessmentIcon from '@mui/icons-material/Assessment';
-import MapIcon from '@mui/icons-material/Map';
 import SettingsIcon from '@mui/icons-material/Settings';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import {
@@ -13,13 +12,8 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 const features = [
-    {
-        title: '3D location',
-        description: 'View the project location on an interactive 3D map',
-        icon: <MapIcon sx={{ fontSize: 40 }} />,
-        path: '/map',
-        color: '#4CAF50',
-    },
+
+
     {
         title: 'Light Simulation',
         description: 'Analyzes the entry of natural and artificial light into the building',

@@ -1,3 +1,4 @@
+import EnergyVisualization from '@/components/EnergyVisualization';
 import { Alert, Box, CircularProgress, Paper, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 
@@ -100,6 +101,7 @@ function EnergyAnalysis() {
                     </Paper>
                 ))}
             </Box>
+            <EnergyVisualization data={data} />
         </Box>
     );
 }

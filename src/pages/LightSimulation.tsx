@@ -294,9 +294,10 @@ function LightSimulation() {
                             ref={containerRef}
                             style={{
                                 width: '100%',
-                                height: '700px', // Much taller map
+                                height: '600px', // Much taller map
                                 position: 'relative',
                                 border: '1px solid #ccc',
+                                overflow: 'hidden',
                                 borderRadius: '4px',
                             }}
                         />

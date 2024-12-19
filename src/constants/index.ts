@@ -10,7 +10,7 @@ export const ROUTES = {
 export const MATERIALS = {
     GLASS_CLEAR: {
         id: 'glass-clear',
-        name: 'Vidrio Claro',
+        name: 'Glass clear',
         transmittance: 0.9,
         cost: 100,
         sustainability: 0.7,
@@ -18,7 +18,7 @@ export const MATERIALS = {
     },
     GLASS_TINTED: {
         id: 'glass-tinted',
-        name: 'Vidrio Tintado',
+        name: 'Glass tinted',
         transmittance: 0.6,
         cost: 150,
         sustainability: 0.8,
@@ -26,7 +26,7 @@ export const MATERIALS = {
     },
     GLASS_LOW_E: {
         id: 'glass-low-e',
-        name: 'Vidrio Bajo Emisivo',
+        name: 'Glass low e',
         transmittance: 0.7,
         cost: 200,
         sustainability: 0.9,
@@ -34,7 +34,7 @@ export const MATERIALS = {
     },
     GLASS_REFLECTIVE: {
         id: 'glass-reflective',
-        name: 'Vidrio Reflectivo',
+        name: 'Glass-reflective',
         transmittance: 0.4,
         cost: 250,
         sustainability: 0.85,

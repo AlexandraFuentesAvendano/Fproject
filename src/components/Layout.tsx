@@ -25,10 +25,10 @@ interface LayoutProps {
 }
 
 const menuItems = [
-    { text: 'Inicio', icon: <HomeIcon />, path: ROUTES.HOME },
-    { text: 'Simulación de Luz', icon: <WbSunnyIcon />, path: ROUTES.LIGHT_SIMULATION },
-    { text: 'Análisis de Energía', icon: <BoltIcon />, path: ROUTES.ENERGY_ANALYSIS },
-    { text: 'Configuración', icon: <SettingsIcon />, path: ROUTES.SETTINGS },
+    { text: 'Home', icon: <HomeIcon />, path: ROUTES.HOME },
+    { text: 'Light Simulation', icon: <WbSunnyIcon />, path: ROUTES.LIGHT_SIMULATION },
+    { text: 'Energy Analysis', icon: <BoltIcon />, path: ROUTES.ENERGY_ANALYSIS },
+    { text: 'Configuration', icon: <SettingsIcon />, path: ROUTES.SETTINGS },
 ];
 
 function Layout({ children }: LayoutProps) {
