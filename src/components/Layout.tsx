@@ -1,6 +1,5 @@
 import BoltIcon from '@mui/icons-material/Bolt';
 import HomeIcon from '@mui/icons-material/Home';
-import MapIcon from '@mui/icons-material/Map';
 import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
@@ -27,7 +26,6 @@ interface LayoutProps {
 
 const menuItems = [
     { text: 'Inicio', icon: <HomeIcon />, path: ROUTES.HOME },
-    { text: 'Mapa 3D', icon: <MapIcon />, path: ROUTES.MAP },
     { text: 'Simulación de Luz', icon: <WbSunnyIcon />, path: ROUTES.LIGHT_SIMULATION },
     { text: 'Análisis de Energía', icon: <BoltIcon />, path: ROUTES.ENERGY_ANALYSIS },
     { text: 'Configuración', icon: <SettingsIcon />, path: ROUTES.SETTINGS },
@@ -82,7 +80,7 @@ function Layout({ children }: LayoutProps) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Visualización de Edificios y Simulación de Luz
+                        Building Visualization and Light Simulation
                     </Typography>
                 </Toolbar>
             </AppBar>

@@ -1,7 +1,6 @@
 // Application Routes
 export const ROUTES = {
     HOME: '/',
-    MAP: '/map',
     LIGHT_SIMULATION: '/light-simulation',
     ENERGY_ANALYSIS: '/energy-analysis',
     SETTINGS: '/settings',

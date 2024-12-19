@@ -57,7 +57,7 @@ export function ErrorMessage({ message, details, onRetry }: ErrorMessageProps) {
                         size="small"
                         onClick={onRetry}
                     >
-                        Reintentar
+                        Retry
                     </IconButton>
                 )
             }
@@ -127,7 +127,7 @@ interface NoDataMessageProps {
 }
 
 export function NoDataMessage({
-    message = 'No hay datos disponibles',
+    message = 'No data available',
     icon,
 }: NoDataMessageProps) {
     return (

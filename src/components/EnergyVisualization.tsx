@@ -196,11 +196,11 @@ function EnergyVisualization({ data }: EnergyVisualizationProps) {
         <Box sx={{ height: 'calc(100vh - 200px)', display: 'flex', flexDirection: 'column', gap: 2 }}>
             <Paper sx={{ p: 2 }}>
                 <Typography variant="h5" gutterBottom>
-                    Visualización de Energía
+                    Energy Visualization
                 </Typography>
                 <Typography variant="body2">
-                    Visualización 3D de la energía por orientación. La altura y color de cada cilindro representa la energía promedio.
-                    Rojo indica mayor energía, azul indica menor energía.
+                    3D visualization of energy by orientation. The height and color of each cylinder represents the average energy.
+                    Red indicates higher energy, blue indicates lower energy.
                 </Typography>
             </Paper>
 

@@ -12,7 +12,7 @@ export function validateBuildingData(data: Partial<BuildingData>): ValidationErr
     if (!data.name) {
         errors.push({
             field: 'name',
-            message: 'El nombre del proyecto es requerido',
+            message: 'Project name is required',
         });
     }
 
@@ -23,7 +23,7 @@ export function validateBuildingData(data: Partial<BuildingData>): ValidationErr
             data.location.latitude > 90) {
             errors.push({
                 field: 'location.latitude',
-                message: 'Latitud inválida. Debe estar entre -90 y 90 grados',
+                message: 'Invalid latitude. It should be between -90 and 90 degrees',
             });
         }
 
@@ -32,13 +32,13 @@ export function validateBuildingData(data: Partial<BuildingData>): ValidationErr
             data.location.longitude > 180) {
             errors.push({
                 field: 'location.longitude',
-                message: 'Longitud inválida. Debe estar entre -180 y 180 grados',
+                message: 'Invalid length. It should be between -180 and 180 degrees',
             });
         }
     } else {
         errors.push({
             field: 'location',
-            message: 'La ubicación es requerida',
+            message: 'Location is required',
         });
     }
 
@@ -47,27 +47,27 @@ export function validateBuildingData(data: Partial<BuildingData>): ValidationErr
         if (typeof data.dimensions.width !== 'number' || data.dimensions.width <= 0) {
             errors.push({
                 field: 'dimensions.width',
-                message: 'El ancho debe ser un número positivo',
+                message: 'Width must be a positive number',
             });
         }
 
         if (typeof data.dimensions.length !== 'number' || data.dimensions.length <= 0) {
             errors.push({
                 field: 'dimensions.length',
-                message: 'El largo debe ser un número positivo',
+                message: 'The length must be a positive number',
             });
         }
 
         if (typeof data.dimensions.height !== 'number' || data.dimensions.height <= 0) {
             errors.push({
                 field: 'dimensions.height',
-                message: 'La altura debe ser un número positivo',
+                message: 'The height must be a positive number',
             });
         }
     } else {
         errors.push({
             field: 'dimensions',
-            message: 'Las dimensiones son requeridas',
+            message: 'Dimensions are required',
         });
     }
 
@@ -77,7 +77,7 @@ export function validateBuildingData(data: Partial<BuildingData>): ValidationErr
         data.orientation > 360) {
         errors.push({
             field: 'orientation',
-            message: 'La orientación debe estar entre 0 y 360 grados',
+            message: 'The orientation must be between 0 and 360 degrees',
         });
     }
 
@@ -86,13 +86,13 @@ export function validateBuildingData(data: Partial<BuildingData>): ValidationErr
         if (!data.materials.windows) {
             errors.push({
                 field: 'materials.windows',
-                message: 'El material de las ventanas es requerido',
+                message: 'Window material is required',
             });
         }
     } else {
         errors.push({
             field: 'materials',
-            message: 'Los materiales son requeridos',
+            message: 'Materials are required',
         });
     }
 
@@ -111,7 +111,7 @@ export function validateLightingParameters(params: {
     if (!params.date || !(params.date instanceof Date) || isNaN(params.date.getTime())) {
         errors.push({
             field: 'date',
-            message: 'La fecha y hora son requeridas',
+            message: 'Date and time are required',
         });
     }
 
@@ -121,7 +121,7 @@ export function validateLightingParameters(params: {
         params.cloudCover > 1) {
         errors.push({
             field: 'cloudCover',
-            message: 'La nubosidad debe estar entre 0 y 1',
+            message: 'Cloudiness must be between 0 and 1',
         });
     }
 
@@ -131,7 +131,7 @@ export function validateLightingParameters(params: {
         params.artificialLight > 1) {
         errors.push({
             field: 'artificialLight',
-            message: 'La luz artificial debe estar entre 0 y 1',
+            message: 'Artificial light must be between 0 and 1',
         });
     }
 
@@ -139,7 +139,7 @@ export function validateLightingParameters(params: {
     if (!params.material) {
         errors.push({
             field: 'material',
-            message: 'El material es requerido',
+            message: 'The material is required',
         });
     }
 

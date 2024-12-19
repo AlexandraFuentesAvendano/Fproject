@@ -115,7 +115,7 @@ function Settings() {
     const handleSave = async () => {
         try {
             if (!buildingData) {
-                throw new Error('No hay datos del edificio disponibles');
+                throw new Error('No building data available');
             }
 
             await updateBuildingSettings({
@@ -138,7 +138,7 @@ function Settings() {
         return (
             <Box sx={{ p: 3 }}>
                 <Alert severity="info">
-                    No hay datos del edificio disponibles. Por favor, cargue un proyecto desde Revit.
+                    No building data available. Please upload a project from Revit.
                 </Alert>
             </Box>
         );
@@ -147,14 +147,14 @@ function Settings() {
     return (
         <Box sx={{ maxWidth: 1200, mx: 'auto', p: 3 }}>
             <Typography variant="h5" gutterBottom>
-                Configuración del Proyecto
+                Project Configuration
             </Typography>
 
             <Grid container spacing={3}>
                 <Grid item xs={12} md={8}>
                     <Paper sx={{ p: 3, mb: 3 }}>
                         <Typography variant="h6" gutterBottom>
-                            Material de Ventanas
+                            Window Material
                         </Typography>
                         <Grid container spacing={2}>
                             {availableMaterials.map((material) => (
@@ -187,7 +187,7 @@ function Settings() {
 
                         <Box sx={{ mt: 4 }}>
                             <Typography variant="h6" gutterBottom>
-                                Orientación del Edificio
+                                Building Orientation
                             </Typography>
                             <Box sx={{ px: 2 }}>
                                 <Slider
@@ -215,7 +215,7 @@ function Settings() {
                             onClick={handleSave}
                             size="large"
                         >
-                            Guardar Cambios
+                            Save Changes
                         </Button>
                     </Box>
                 </Grid>
@@ -224,17 +224,17 @@ function Settings() {
                     {selectedMaterial && (
                         <Paper sx={{ p: 2 }}>
                             <Typography variant="h6" gutterBottom>
-                                Propiedades del Material
+                                Material Properties
                             </Typography>
                             <Box sx={{ mt: 2 }}>
                                 <Typography variant="body2" gutterBottom>
-                                    Resistencia Térmica: {selectedMaterial.properties.thermalResistance} m²K/W
+                                    Thermal Resistance: {selectedMaterial.properties.thermalResistance} m²K/W
                                 </Typography>
                                 <Typography variant="body2" gutterBottom>
-                                    Costo Relativo: ${selectedMaterial.properties.cost}/m²
+                                    Relative Cost: ${selectedMaterial.properties.cost}/m²
                                 </Typography>
                                 <Typography variant="body2">
-                                    Índice de Sostenibilidad: {(selectedMaterial.properties.sustainability * 100).toFixed(0)}%
+                                    Sustainability Index: {(selectedMaterial.properties.sustainability * 100).toFixed(0)}%
                                 </Typography>
                             </Box>
                         </Paper>
@@ -246,7 +246,7 @@ function Settings() {
                             sx={{ mt: 2 }}
                             onClose={() => setShowSuccess(false)}
                         >
-                            Cambios guardados exitosamente
+                            Changes saved successfully
                         </Alert>
                     )}
 

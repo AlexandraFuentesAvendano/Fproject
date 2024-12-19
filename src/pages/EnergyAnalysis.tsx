@@ -18,7 +18,7 @@ function EnergyAnalysis() {
             try {
                 const response = await fetch('/data/resultados_energia.json');
                 if (!response.ok) {
-                    throw new Error('Error al cargar los datos de energía');
+                    throw new Error('Error loading energy data');
                 }
                 const jsonData = await response.json();
                 setData(jsonData);
@@ -76,26 +76,26 @@ function EnergyAnalysis() {
     return (
         <Box sx={{ p: 2 }}>
             <Typography variant="h5" gutterBottom>
-                Análisis de Energía por Orientación
+                Energy Analysis by Orientation
             </Typography>
 
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 2 }}>
                 {Object.entries(groupedData).map(([orientation, stats]) => (
                     <Paper key={orientation} sx={{ p: 2 }}>
                         <Typography variant="h6" gutterBottom>
-                            Orientación: {orientation}°
+                            Orientation: {orientation}°
                         </Typography>
                         <Typography>
-                            Cantidad de elementos: {stats.count}
+                            Number of elements: {stats.count}
                         </Typography>
                         <Typography>
-                            Energía total: {stats.totalEnergy.toFixed(2)} kWh
+                            Total energy: {stats.totalEnergy.toFixed(2)} kWh
                         </Typography>
                         <Typography>
-                            Área total: {stats.totalArea.toFixed(2)} m²
+                            Total area: {stats.totalArea.toFixed(2)} m²
                         </Typography>
                         <Typography>
-                            Energía promedio: {(stats.totalEnergy / stats.count).toFixed(2)} kWh/elemento
+                            Average energy: {(stats.totalEnergy / stats.count).toFixed(2)} kWh/elemento
                         </Typography>
                     </Paper>
                 ))}

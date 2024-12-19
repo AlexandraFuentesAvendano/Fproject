@@ -44,7 +44,7 @@ export function calculateSunPosition(date: Date, latitude: number, longitude: nu
     ) * 180 / Math.PI;
 
     // Calculate azimuth
-    let azimuth = Math.atan2(
+    const azimuth = Math.atan2(
         Math.sin(hourAngle * Math.PI / 180),
         Math.cos(hourAngle * Math.PI / 180) * Math.sin(latitude * Math.PI / 180) -
         Math.tan(declination * Math.PI / 180) * Math.cos(latitude * Math.PI / 180)
@@ -56,17 +56,26 @@ export function calculateSunPosition(date: Date, latitude: number, longitude: nu
     };
 }
 
-export function calculateLightIntensity(sunPosition: SunPosition, cloudCover: number): LightIntensity {
-    // Base intensity calculation based on sun elevation
+export function calculateLightIntensity(
+    sunPosition: SunPosition,
+    windowArea: number,
+    glassTransmittance: number
+): LightIntensity {
+    // Base intensity based on sun elevation (0-1)
     let directIntensity = Math.sin(sunPosition.elevation * Math.PI / 180);
-    directIntensity = Math.max(0, directIntensity); // No negative intensity
+    directIntensity = Math.max(0, directIntensity);
 
-    // Cloud cover affects direct light
-    directIntensity *= (1 - cloudCover * 0.8); // Clouds block up to 80% of direct light
+    // Scale factor for window area (normalized to typical window size)
+    const areaFactor = Math.min(1.5, windowArea / 4); // 4m² as reference size
 
-    // Ambient light calculation
-    // More ambient light when cloudy (diffused light)
-    const ambientIntensity = 0.2 + cloudCover * 0.3; // Base ambient + cloud diffusion
+    // Adjust intensity based on area and transmittance
+    directIntensity = directIntensity * areaFactor * glassTransmittance;
+
+    // Scale to reasonable percentage (0-100)
+    directIntensity = Math.min(1, directIntensity * 1.5);
+
+    // Ambient light increases with glass transmittance
+    const ambientIntensity = 0.2 + (0.3 * glassTransmittance * areaFactor);
 
     return {
         direct: directIntensity,
@@ -75,48 +84,34 @@ export function calculateLightIntensity(sunPosition: SunPosition, cloudCover: nu
 }
 
 export function calculateTotalIlluminance(
-    directLight: number,
+    naturalLight: number,
     artificialLight: number,
     materialTransmittance: number
 ): number {
-    // Combine natural and artificial light
-    const naturalIlluminance = directLight * materialTransmittance * 100000; // Convert to lux (approximate)
-    const artificialIlluminance = artificialLight * 500; // Typical artificial light in lux
-
+    const naturalIlluminance = naturalLight * materialTransmittance * 100000;
+    const artificialIlluminance = artificialLight * 500;
     return naturalIlluminance + artificialIlluminance;
 }
 
 export function calculateEnergyEfficiency(
     naturalLight: number,
     artificialLight: number,
-    targetIlluminance: number = 500 // Standard office illuminance in lux
+    windowArea: number,
+    targetIlluminance = 500
 ): number {
     const totalLight = naturalLight + artificialLight;
     if (totalLight === 0) return 0;
 
-    // Calculate efficiency as ratio of natural light to total light
     const efficiency = (naturalLight / totalLight) * 100;
+    const areaFactor = Math.min(1.5, windowArea / 4);
 
-    // Adjust efficiency based on whether we're meeting the target illuminance
-    const illuminanceRatio = totalLight / targetIlluminance;
-    if (illuminanceRatio < 1) {
-        // Penalize for insufficient light
-        return efficiency * illuminanceRatio;
-    } else if (illuminanceRatio > 1.5) {
-        // Penalize for excessive light
-        return efficiency * (1.5 / illuminanceRatio);
-    }
-
-    return efficiency;
+    return efficiency * areaFactor;
 }
 
 export function calculateOptimalArtificialLight(
     naturalLight: number,
-    targetIlluminance: number = 500
+    targetIlluminance = 500
 ): number {
-    // Calculate required artificial light to reach target illuminance
-    const requiredArtificial = Math.max(0, targetIlluminance - naturalLight);
-
-    // Convert to percentage (0-1)
+    const requiredArtificial = Math.max(0, targetIlluminance - (naturalLight * 100000));
     return Math.min(1, requiredArtificial / 500);
 }

@@ -14,29 +14,29 @@ import { useNavigate } from 'react-router-dom';
 
 const features = [
     {
-        title: 'Ubicación 3D',
-        description: 'Visualiza la ubicación del proyecto en un mapa 3D interactivo',
+        title: '3D location',
+        description: 'View the project location on an interactive 3D map',
         icon: <MapIcon sx={{ fontSize: 40 }} />,
         path: '/map',
         color: '#4CAF50',
     },
     {
-        title: 'Simulación de Luz',
-        description: 'Analiza la entrada de luz natural y artificial en el edificio',
+        title: 'Light Simulation',
+        description: 'Analyzes the entry of natural and artificial light into the building',
         icon: <WbSunnyIcon sx={{ fontSize: 40 }} />,
         path: '/light-simulation',
         color: '#FFC107',
     },
     {
-        title: 'Análisis de Energía',
-        description: 'Visualiza el consumo de energía por orientación y materiales',
+        title: 'Energy Analysis',
+        description: 'View energy consumption by orientation and materials',
         icon: <AssessmentIcon sx={{ fontSize: 40 }} />,
         path: '/energy-analysis',
         color: '#2196F3',
     },
     {
-        title: 'Configuración',
-        description: 'Personaliza materiales y ajusta parámetros del proyecto',
+        title: 'Configuration',
+        description: 'Customize materials and adjust project parameters',
         icon: <SettingsIcon sx={{ fontSize: 40 }} />,
         path: '/settings',
         color: '#9C27B0',
@@ -49,11 +49,11 @@ function Home() {
     return (
         <Box sx={{ flexGrow: 1, p: 3 }}>
             <Typography variant="h4" gutterBottom align="center" sx={{ mb: 4 }}>
-                Visualizador de Proyectos Revit
+                Revit Project Viewer
             </Typography>
 
             <Typography variant="subtitle1" gutterBottom align="center" sx={{ mb: 6 }}>
-                Analiza y optimiza tus proyectos con herramientas de visualización avanzadas
+                Analyze and optimize your projects with advanced visualization tools
             </Typography>
 
             <Grid container spacing={4}>
@@ -111,7 +111,7 @@ function Home() {
 
             <Box sx={{ mt: 6, textAlign: 'center' }}>
                 <Typography variant="body1" color="text.secondary">
-                    Proyecto integrado con Revit y Dynamo para análisis energético y optimización de diseño
+                    Project integrated with Revit and Dynamo for energy analysis and design optimization
                 </Typography>
             </Box>
         </Box>
