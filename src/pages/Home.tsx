@@ -50,7 +50,7 @@ function Home() {
                 Analyze and optimize your projects with advanced visualization tools
             </Typography>
 
-            <Grid container spacing={4}>
+            <Grid container spacing={4} justifyContent="center" alignItems="center">
                 {features.map((feature) => (
                     <Grid item xs={12} sm={6} md={3} key={feature.title}>
                         <Card
@@ -95,7 +95,7 @@ function Home() {
                                         },
                                     }}
                                 >
-                                    Explorar
+                                    Explore
                                 </Button>
                             </CardContent>
                         </Card>

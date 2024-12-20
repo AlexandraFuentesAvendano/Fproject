@@ -194,7 +194,7 @@ function EnergyVisualization({ data }: EnergyVisualizationProps) {
 
     return (
         <Box sx={{ height: 'calc(100vh - 200px)', display: 'flex', flexDirection: 'column', gap: 2 }}>
-            <Paper sx={{ p: 2 }}>
+            <Paper sx={{ p: 2, mt: 4 }}>
                 <Typography variant="h5" gutterBottom>
                     Energy Visualization
                 </Typography>
@@ -221,13 +221,13 @@ function EnergyVisualization({ data }: EnergyVisualizationProps) {
                     <Grid item xs={12} sm={6} md={3} key={orientation}>
                         <Paper sx={{ p: 2 }}>
                             <Typography variant="subtitle1">
-                                Orientación: {orientation}°
+                                Orientation: {orientation}°
                             </Typography>
                             <Typography variant="body2">
-                                Energía promedio: {averageEnergy.toFixed(2)} kWh/m²
+                                Average energy: {averageEnergy.toFixed(2)} kWh/m²
                             </Typography>
                             <Typography variant="body2">
-                                Área total: {totalArea.toFixed(2)} m²
+                                Total Area: {totalArea.toFixed(2)} m²
                             </Typography>
                         </Paper>
                     </Grid>
